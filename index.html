@@ -73,8 +73,12 @@
   </tr>
   <tr>
     <td>2</td>
-    <td>Phế cầu</td>
-    <td>Synflorix</td>
+    <td>
+            <select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select>
+        </td>
+    <td data-bind="with: category">
+            <select data-bind='options: phecau, optionsText: "name", optionsCaption: "Select...", value: phecau.name'> </select>
+        </td>
     <td>Bỉ</td>
     <td>990.000 đ</td>
     <td>3</td>
