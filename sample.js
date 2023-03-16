@@ -3,8 +3,9 @@ var sampleProductCategories = [
         "6in1": [
             {
                 "name": "Hexaxim",
-                "nsx": "Pháp"
-                "price": "995.000 đ"
+                "nsx": "Pháp",
+                "price": "995.000 đ",
+                "solieu": 3
             }
         ],
         "name": "Hexaxim"
