@@ -9,40 +9,20 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<table width='100%'>
-    <thead>
-    <tr>
-        <th width='25%'>Category</th>
-        <th width='25%'>Product</th>
-        <th class='price' width='15%'>Price</th>
-        <th class='quantity' width='10%'>Quantity</th>
-        <th class='price' width='15%'>Subtotal</th>
-        <th width='10%'> </th>
-    </tr>
-    </thead>
-    <tbody data-bind='foreach: lines'>
-    <tr>
-        <td>
-            <select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select>
-        </td>
-        <td data-bind="with: category">
-            <select data-bind='options: products, optionsText: "name", optionsCaption: "Select...", value: $parent.product'> </select>
-        </td>
-        <td class='price' data-bind='with: product'>
-            <span data-bind='text: formatCurrency(price)'> </span>
-        </td>
-        <td class='quantity'>
-            <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' />
-        </td>
-        <td class='price'>
-            <span data-bind='visible: product, text: formatCurrency(subtotal())' > </span>
-        </td>
-        <td>
-            <a href='#' data-bind='click: $parent.removeLine'>Remove</a>
-        </td>
-    </tr>
+<table>
+    <thead><tr>
+        <th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>
+    </tr></thead>
+    <tbody data-bind="foreach: seats">
+        <tr>
+            <td><input data-bind="value: name" /></td>
+            <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+            <td data-bind="text: formattedPrice"></td>
+            <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+        </tr>    
     </tbody>
 </table>
+
 <table>
 <thead>
   <tr>
@@ -170,50 +150,51 @@
 
 <script>
 
-    function formatCurrency(value) {
-        return "$" + value.toFixed(2);
+   // Class to represent a row in the seat reservations grid
+function SeatReservation(name, initialMeal) {
+    var self = this;
+    self.name = name;
+    self.meal = ko.observable(initialMeal);
+
+    self.formattedPrice = ko.computed(function() {
+        var price = self.meal().price;
+        return price ? "$" + price.toFixed(2) : "None";        
+    });    
+}
+
+// Overall viewmodel for this screen, along with initial state
+function ReservationsViewModel() {
+    var self = this;
+
+    // Non-editable catalog data - would come from the server
+    self.availableMeals = [
+        { mealName: "Standard (sandwich)", price: 0 },
+        { mealName: "Premium (lobster)", price: 34.95 },
+        { mealName: "Ultimate (whole zebra)", price: 290 }
+    ];    
+
+    // Editable data
+    self.seats = ko.observableArray([
+        new SeatReservation("Steve", self.availableMeals[0]),
+        new SeatReservation("Bert", self.availableMeals[0])
+    ]);
+
+    // Computed data
+    self.totalSurcharge = ko.computed(function() {
+       var total = 0;
+       for (var i = 0; i < self.seats().length; i++)
+           total += self.seats()[i].meal().price;
+       return total;
+    });    
+
+    // Operations
+    self.addSeat = function() {
+        self.seats.push(new SeatReservation("", self.availableMeals[0]));
     }
+    self.removeSeat = function(seat) { self.seats.remove(seat) }
+}
 
-    var CartLine = function() {//chưa có data???
-        var self = this;
-        self.category = ko.observable();
-        self.product = ko.observable();
-        self.quantity = ko.observable(1);
-        self.subtotal = ko.pureComputed(function() {
-            return self.product() ? self.product().price * parseInt("0" + self.quantity(), 10) : 0;
-        });
-
-        // Whenever the category changes, reset the product selection
-        self.category.subscribe(function() {
-            self.product(undefined);
-        });
-    };
-
-    var Cart = function() {
-        // Stores an array of lines, and from these, can work out the grandTotal
-        var self = this;
-        self.lines = ko.observableArray([new CartLine()]); // Put one line in by default
-        self.grandTotal = ko.pureComputed(function() {
-            var total = 0;
-            $.each(self.lines(), function() { total += this.subtotal() })
-            return total;
-        });
-
-        // Operations
-        self.addLine = function() { self.lines.push(new CartLine()) };
-        self.removeLine = function(line) { self.lines.remove(line) };
-        self.save = function() {
-            var dataToSave = $.map(self.lines(), function(line) {
-                return line.product() ? {
-                    productName: line.product().name,
-                    quantity: line.quantity()
-                } : undefined
-            });
-            alert("Could now send this to server: " + JSON.stringify(dataToSave));
-        };
-    };
-
-    ko.applyBindings(new Cart());
+ko.applyBindings(new ReservationsViewModel());
 
 </script>
 </body>
