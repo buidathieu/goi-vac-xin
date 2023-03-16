@@ -41,13 +41,11 @@
   <tr>
     <td>1</td>
     <td>6IN1</td>
-    <td><select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select></td>
+    <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
     <td data-bind="with: category">
             <select data-bind='options: 6in1, optionsText: "nsx", optionsCaption: "", value: nsx'> </select>
     </td>
-    <td data-bind="with: category">
-            <select data-bind='options: 6in1, optionsText: "price", optionsCaption: "Select...", value: $parent.6in1'> </select>
-        </td>
+    <td data-bind="text: formattedPrice"></td>
     <td>3</td>
     <td>2.985.000 đ</td>
   </tr>
@@ -168,8 +166,8 @@ function ReservationsViewModel() {
 
     // Non-editable catalog data - would come from the server
     self.availableMeals = [
-        { mealName: "Standard (sandwich)", price: 0 },
-        { mealName: "Premium (lobster)", price: 34.95 },
+        { mealName: "Hexaxim", price: 995.000 },
+        { mealName: "Synflorix", price: 1000.000 },
         { mealName: "Ultimate (whole zebra)", price: 290 }
     ];    
 
