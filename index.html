@@ -65,9 +65,9 @@
     <td data-bind="with: category">
             <select data-bind='options: 6in1, optionsText: "nsx", optionsCaption: "", value: nsx'> </select>
     </td>
-    <td class='price' data-bind='with: 6in1'>
-            <span data-bind='text: price'> </span>
-    </td>
+    <td data-bind="with: category">
+            <select data-bind='options: 6in1, optionsText: "price", optionsCaption: "Select...", value: $parent.6in1'> </select>
+        </td>
     <td>3</td>
     <td>2.985.000 đ</td>
   </tr>
