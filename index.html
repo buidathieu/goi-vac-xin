@@ -62,7 +62,9 @@
     <td>1</td>
     <td>6IN1</td>
     <td><select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select></td>
-    <td>Pháp</td>
+    <td data-bind="with: category">
+            <select data-bind='options: 6in1, optionsText: "nsx", optionsCaption: "", value: $parent.product'> </select>
+    </td>
     <td>995.000 đ</td>
     <td>3</td>
     <td>2.985.000 đ</td>
