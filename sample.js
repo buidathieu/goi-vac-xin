@@ -9,61 +9,17 @@ var sampleProductCategories = [
         "name": "Hexaxim"
     },
     {
-        "products": [
+        "phecau": [
             {
-                "name": "1936 Harley Davidson El Knucklehead",
-                "price": 24.23
+                "name": "Synflorix",
+                "price": 990.000
             },
             {
-                "name": "1957 Vespa GS150",
-                "price": 32.95
-            },
-            {
-                "name": "1960 BSA Gold Star DBD34",
-                "price": 37.32
-            },
-            {
-                "name": "1969 Harley Davidson Ultimate Chopper",
-                "price": 48.81
-            },
-            {
-                "name": "1974 Ducati 350 Mk3 Desmo",
-                "price": 56.13
-            },
-            {
-                "name": "1982 Ducati 900 Monster",
-                "price": 47.1
-            },
-            {
-                "name": "1982 Ducati 996 R",
-                "price": 24.14
-            },
-            {
-                "name": "1996 Moto Guzzi 1100i",
-                "price": 68.99
-            },
-            {
-                "name": "1997 BMW F650 ST",
-                "price": 66.92
-            },
-            {
-                "name": "1997 BMW R 1100 S",
-                "price": 60.86
-            },
-            {
-                "name": "2002 Suzuki XREO",
-                "price": 66.27
-            },
-            {
-                "name": "2002 Yamaha YZR M1",
-                "price": 34.17
-            },
-            {
-                "name": "2003 Harley-Davidson Eagle Drag Bike",
-                "price": 91.02
+                "name": "Prevenar",
+                "price": 1285.000
             }
         ],
-        "name": "Motorcycles"
+        "name": "Phế cầu"
     },
     {
         "products": [
