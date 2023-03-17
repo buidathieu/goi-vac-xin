@@ -179,7 +179,10 @@ function calculateTotal()
   $("#qty_solieu").text(total);
   
 }
-
+$(function()
+ {
+    $(".qty").on("change",calculateTotal)
+})
 
 </script>
 
