@@ -173,7 +173,17 @@ else if(value3 === "Rotarix"){ document.getElementById("nsx-rota").innerHTML = "
 else if(value3 === "Rotavin"){ document.getElementById("nsx-rota").innerHTML = "Việt Nam"; document.getElementById("gia-rota").innerHTML = "450.000 đ"; document.getElementById("qty-rota").innerHTML = "2"}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
   };
+function calculateTotal()
+{
+  let total = ($("#qty_in1").val() + ($("#qty_bc").val() + ($("#qty_phecau").val() + ($("#qty_cum").val();
 
+  $("#qty_solieu").text(total);
+
+}
+$(function()
+ {
+    $(".qty").on("change",calculateTotal)
+})
 
 </script>
 
