@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Includes nested dropdowns and a string formatting function</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="sample.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <body>
 
-<table>
+<table style="undefined;table-layout: fixed; width: 640px">
+<colgroup>
+<col style="width: 28.2px">
+<col style="width: 149.2px">
+<col style="width: 127.2px">
+<col style="width: 87.2px">
+<col style="width: 85.2px">
+<col style="width: 67.2px">
+<col style="width: 96.2px">
+</colgroup>
 <thead>
   <tr>
     <th rowspan="2">TT</th>
@@ -24,30 +27,34 @@
   <tr>
   </tr>
 </thead>
-<tbody data-bind="foreach: seats">
+<tbody>
   <tr>
     <td>1</td>
     <td>6IN1</td>
-    <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
-    <td data-bind="with: category">
-            <select data-bind='options: 6in1, optionsText: "nsx", optionsCaption: "", value: nsx'> </select>
+    <td>
+      <select id="in1" onchange="myFunction(in1)">
+        <option value="Hexaxim">Hexaxim</option>
+        <option value="Infanrix Hexa">Infanrix Hexa</option>
+      </select>
     </td>
-    <td data-bind="options: $root.availableMeals, value: meal, optionsText: 'price'"></td>
+    <td id="nsx-in1">Pháp</td>
+    <td>995.000 đ</td>
     <td>3</td>
     <td>2.985.000 đ</td>
   </tr>
   <tr>
     <td>2</td>
+    <td>Phế cầu</td>
     <td>
-            <select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select>
-        </td>
-    <td data-bind="with: category">
-            <select data-bind='options: phecau, optionsText: "name", optionsCaption: "Select...", value: phecau.name'> </select>
-        </td>
-    <td>Bỉ</td>
-    <td>990.000 đ</td>
+      <select id="phecau" onchange="myFunction2(phecau)">
+        <option value="Synflorix">Synflorix</option>
+        <option value="Prevenar">Prevenar</option>
+      </select>
+    </td>
+    <td id="nsx-phecau">Bỉ</td>
+    <td id="gia-phecau">990.000 đ</td>
     <td>3</td>
-    <td>2.970.000 đ</td>
+    <td id="thanhtien-phecau"></td>
   </tr>
   <tr>
     <td>3</td>
@@ -127,60 +134,24 @@
   </tr>
 </tbody>
 </table>
-<p class='grandTotal'>
-    Total value: <span data-bind='text: formatCurrency(grandTotal())'> </span>
-</p>
-<button data-bind='click: addLine'>Add product</button>
-<button data-bind='click: save'>Submit order</button>
 
 <script>
+function myFunction(in1) {
+var value1 = in1.value;
+if(value1 === "Hexaxim"){ document.getElementById("nsx-in1").innerHTML = "Pháp";}
+else if(value1 === "Infanrix Hexa"){ document.getElementById("nsx-in1").innerHTML = "Bỉ";}
+else{document.getElementById("dkm").innerHTML = "You selected: Volvo";}
+};
 
-   // Class to represent a row in the seat reservations grid
-function SeatReservation(name, initialMeal) {
-    var self = this;
-    self.name = name;
-    self.meal = ko.observable(initialMeal);
-
-    self.formattedPrice = ko.computed(function() {
-        var price = self.meal().price;
-        return price ? "$" + price.toFixed(2) : "None";        
-    });    
+function myFunction2(phecau) {
+var value2 = phecau.value;
+if(value2 === "Synflorix"){ document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia-phecau").innerHTML = "990.000 đ"}
+else if(value2 === "Prevenar"){ document.getElementById("nsx-phecau").innerHTML = "Anh"; document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
+else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 }
-
-// Overall viewmodel for this screen, along with initial state
-function ReservationsViewModel() {
-    var self = this;
-
-    // Non-editable catalog data - would come from the server
-    self.availableMeals = [
-        { mealName: "Hexaxim", price: 995.000 },
-        { mealName: "Synflorix", price: 1000.000 },
-        { mealName: "Ultimate (whole zebra)", price: 290 }
-    ];    
-
-    // Editable data
-    self.seats = ko.observableArray([
-        new SeatReservation("Steve", self.availableMeals[0]),
-        new SeatReservation("Bert", self.availableMeals[0])
-    ]);
-
-    // Computed data
-    self.totalSurcharge = ko.computed(function() {
-       var total = 0;
-       for (var i = 0; i < self.seats().length; i++)
-           total += self.seats()[i].meal().price;
-       return total;
-    });    
-
-    // Operations
-    self.addSeat = function() {
-        self.seats.push(new SeatReservation("", self.availableMeals[0]));
-    }
-    self.removeSeat = function(seat) { self.seats.remove(seat) }
-}
-
-ko.applyBindings(new ReservationsViewModel());
-
 </script>
+
+
 </body>
 </html>
+
