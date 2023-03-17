@@ -50,7 +50,7 @@
     </td>
     <td id="nsx-in1">Pháp</td>
     <td class="tg-9wq8">995.000 đ</td>
-    <td class="tg-9wq8" id="qty-in1">3</td>
+    <td class="qty" id="qty-in1">3</td>
     <td class="tg-9wq8">2.985.000 đ</td>
   </tr>
   <tr>
@@ -64,7 +64,7 @@
     </td>
     <td id="nsx-phecau">Bỉ</td>
     <td id="gia-phecau">990.000 đ</td>
-    <td class="tg-9wq8" id="qty-phecau">3</td>
+    <td class="qty" id="qty-phecau">3</td>
     <td id="thanhtien-phecau"></td>
   </tr>
   <tr>
@@ -73,7 +73,7 @@
     <td class="tg-lboi">Rotateq</td>
     <td class="tg-lboi">Mỹ</td>
     <td class="tg-rcip"><span style="background-color:#FFF">660.000 đ</span></td>
-    <td class="tg-rcip" id="qty-rota"><span style="font-weight:normal;background-color:#FFF">3</span></td>
+    <td class="qty" id="qty-rota"><span style="font-weight:normal;background-color:#FFF">3</span></td>
     <td class="tg-9wq8">1.980.000 đ</td>
   </tr>
   <tr>
@@ -82,7 +82,7 @@
     <td class="tg-lboi">Mengoc BC</td>
     <td class="tg-lboi">Cuba</td>
     <td class="tg-9wq8">280.000 đ</td>
-    <td class="tg-9wq8" id="qty-bc">2</td>
+    <td class="qty" id="qty-bc">2</td>
     <td class="tg-9wq8">560.000 đ</td>
   </tr>
   <tr>
@@ -91,7 +91,7 @@
     <td class="tg-lboi">Gcflu Quadrivalent</td>
     <td class="tg-0ys1"><span style="font-weight:normal;background-color:#FFF">Hàn Quốc</span></td>
     <td class="tg-9wq8">330.000 đ</td>
-    <td class="tg-9wq8" id="qty-cum">2</td>
+    <td class="qty" id="qty-cum">2</td>
     <td class="tg-9wq8">660.000 đ</td>
   </tr>
   <tr>
@@ -100,7 +100,7 @@
     <td class="tg-lboi">Menactra</td>
     <td class="tg-lboi">Mỹ</td>
     <td class="tg-9wq8">1.245.000 đ</td>
-    <td class="tg-9wq8" id="qty-ac">1</td>
+    <td class="qty" id="qty-ac">1</td>
     <td class="tg-9wq8">1.245.000 đ</td>
   </tr>
   <tr>
@@ -109,7 +109,7 @@
     <td class="tg-lboi">Imojev</td>
     <td class="tg-lboi">Thái Lan</td>
     <td class="tg-9wq8">655.000 đ</td>
-    <td class="tg-9wq8" id="qty-imj">1</td>
+    <td class="qty" id="qty-imj">1</td>
     <td class="tg-9wq8">655.000 đ</td>
   </tr>
   <tr>
@@ -118,7 +118,7 @@
     <td class="tg-lboi">Priorix</td>
     <td class="tg-lboi">Bỉ</td>
     <td class="tg-9wq8">400.000 đ</td>
-    <td class="tg-9wq8" id="qty-pri">1</td>
+    <td class="qty" id="qty-pri">1</td>
     <td class="tg-9wq8">400.000 đ</td>
   </tr>
   <tr>
@@ -127,7 +127,7 @@
     <td class="tg-lboi">Varilrix</td>
     <td class="tg-lboi">Bỉ</td>
     <td class="tg-9wq8">940.000 đ</td>
-    <td class="tg-9wq8" id="qty-td">1</td>
+    <td class="qty" id="qty-td">1</td>
     <td class="tg-9wq8">940.000 đ</td>
   </tr>
   <tr>
@@ -167,7 +167,10 @@ function calculateTotal()
   $("#qty_solieu").text(total);
   
 }
-
+$(function()
+ {
+    $(".qty").on("change keyup",calculateTotal)
+})
 
 </script>
 
