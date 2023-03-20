@@ -49,8 +49,8 @@
       </select>
     </td>
     <td id="nsx-in1">Pháp</td>
-    <td class="tg-9wq8">995.000 đ</td>
-    <td class="qty" id="qty-in1">3</td>
+    <td class="tg-9wq8" id="gia_in1" value="995000">995.000 đ</td>
+    <td class="qty" id="qty_in1" value="3">3</td>
     <td class="tg-9wq8">2.985.000 đ</td>
   </tr>
   <tr>
@@ -96,8 +96,8 @@
     <td class="tg-lboi">Cúm</td>
     <td class="tg-lboi">Gcflu Quadrivalent</td>
     <td class="tg-0ys1"><span style="font-weight:normal;background-color:#FFF">Hàn Quốc</span></td>
-    <td class="tg-9wq8">330.000 đ</td>
-    <td class="qty" id="qty-cum">2</td>
+    <td class="tg-9wq8" id="gia_cum">330.000 đ</td>
+    <td class="qty" id="qty-cum" value="2">2</td>
     <td class="tg-9wq8">660.000 đ</td>
   </tr>
   <tr>
@@ -162,7 +162,7 @@ else{document.getElementById("dkm").innerHTML = "You selected: Volvo";}
 
 function myFunction2(phecau) {
 var value2 = phecau.value; 
-if(value2 === "Synflorix"){ document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia_phecau").innerHTML = "990.000 đ"; thanhtien_phecau.value = 990000*3; document.getElementById("thanhtien_phecau").innerHTML = thanhtien_phecau.value}
+if(value2 === "Synflorix"){ gia_phecau.value = 990000; document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia_phecau").innerHTML = "990.000 đ"; thanhtien_phecau.value = 990000*3; document.getElementById("thanhtien_phecau").innerHTML = thanhtien_phecau.value}
 else if(value2 === "Prevenar"){ document.getElementById("nsx-phecau").innerHTML = "Anh"; document.getElementById("gia_phecau").innerHTML = "1.285.000 đ"; thanhtien_phecau.value = 1285000*3; document.getElementById("thanhtien_phecau").innerHTML = thanhtien_phecau.value }
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 };
