@@ -50,7 +50,7 @@
     </td>
     <td id="nsx-in1">Pháp</td>
     <td class="tg-9wq8">995.000 đ</td>
-    <td class="qty" id="qty-in1">9</td>
+    <td class="qty" id="qty-in1">3</td>
     <td class="tg-9wq8">2.985.000 đ</td>
   </tr>
   <tr>
@@ -63,9 +63,9 @@
       </select>
     </td>
     <td id="nsx-phecau">Bỉ</td>
-    <td id="gia-phecau">990.000 đ</td>
-    <td class="qty" id="qty-phecau">3</td>
-    <td id="thanhtien-phecau"></td>
+    <td id="gia_phecau" value=x>990.000 đ</td>
+    <td class="qty" id="qty-phecau" value=3>3</td>
+    <td id="thanhtien_phecau" value=y>2.970.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">3</td>
@@ -161,9 +161,9 @@ else{document.getElementById("dkm").innerHTML = "You selected: Volvo";}
 };
 
 function myFunction2(phecau) {
-var value2 = phecau.value;
-if(value2 === "Synflorix"){ document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia-phecau").innerHTML = "990.000 đ"}
-else if(value2 === "Prevenar"){ document.getElementById("nsx-phecau").innerHTML = "Anh"; document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
+var value2 = phecau.value; 
+if(value2 === "Synflorix"){ document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia_phecau").innerHTML = "990.000 đ"; thanhtien_phecau.value = 990000*3; document.getElementById("thanhtien_phecau").innerHTML}
+else if(value2 === "Prevenar"){ document.getElementById("nsx-phecau").innerHTML = "Anh"; document.getElementById("gia_phecau").innerHTML = "1.285.000 đ";}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 };
 function myFunction3(rota) {
