@@ -164,6 +164,7 @@ var value1 = in1.value;
 if(value1 === "Hexaxim"){ document.getElementById("nsx-in1").innerHTML = "Pháp";}
 else if(value1 === "Infanrix Hexa"){ document.getElementById("nsx-in1").innerHTML = "Bỉ";}
 else{document.getElementById("dkm").innerHTML = "You selected: Volvo";}
+
 };
 
 function myFunction2(phecau) {
@@ -178,6 +179,8 @@ if(value3 === "Rotateq"){ document.getElementById("nsx-rota").innerHTML = "Mỹ"
 else if(value3 === "Rotarix"){ document.getElementById("nsx-rota").innerHTML = "Bỉ"; document.getElementById("gia-rota").innerHTML = "820.000 đ"; document.getElementById("qty_rota").innerHTML = "2"; document.getElementById("thanhtien_rota").innerHTML = "1.640.000 đ"}
 else if(value3 === "Rotavin"){ document.getElementById("nsx-rota").innerHTML = "Việt Nam"; document.getElementById("gia-rota").innerHTML = "450.000 đ"; document.getElementById("qty_rota").innerHTML = "2"; document.getElementById("thanhtien_rota").innerHTML = "900.000 đ"}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
+qty_solieu.value = qty_rota.value + 15;
+document.getElementById("qty_solieu").innerHTML = qty_solieu.value; 
   };
 function myFunction4(cum) {
 var value4 = cum.value;
