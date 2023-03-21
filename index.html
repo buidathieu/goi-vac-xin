@@ -79,8 +79,8 @@
     </td>
     <td class="tg-lboi" id="nsx-rota">Mỹ</td>
     <td class="tg-rcip" id="gia-rota"><span style="background-color:#FFF">660.000 đ</span></td>
-    <td class="qty" id="qty-rota"><span style="font-weight:normal;background-color:#FFF">3</span></td>
-    <td class="tg-9wq8">1.980.000 đ</td>
+    <td class="qty" id="qty_rota"><span style="font-weight:normal;background-color:#FFF">3</span></td>
+    <td class="tg-9wq8" id="thanhtien_rota">1.980.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">4</td>
@@ -88,17 +88,23 @@
     <td class="tg-lboi">Mengoc BC</td>
     <td class="tg-lboi">Cuba</td>
     <td class="tg-9wq8">280.000 đ</td>
-    <td class="qty" id="qty-bc">2</td>
-    <td class="tg-9wq8">560.000 đ</td>
+    <td class="qty" id="qty_bc" value="2">2</td>
+    <td class="tg-9wq8" id="thanhtien_bc" value="560000">560.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">5</td>
     <td class="tg-lboi">Cúm</td>
-    <td class="tg-lboi">Gcflu Quadrivalent</td>
+    <td>
+      <select id="cum" onchange="myFunction4(cum)">
+        <option value="GCFlu Quadrivalent">GCFlu Quadrivalent</option>
+        <option value="Influvac Tetra">Influvac Tetra</option>
+        <option value="Vaxigrip Tetra">Vaxigrip Tetra</option>
+      </select>
+    </td>
     <td class="tg-0ys1"><span style="font-weight:normal;background-color:#FFF">Hàn Quốc</span></td>
-    <td class="tg-9wq8" id="gia_cum">330.000 đ</td>
-    <td class="qty" id="qty-cum" value="2">2</td>
-    <td class="tg-9wq8">660.000 đ</td>
+    <td class="tg-9wq8" id="gia-cum">330.000 đ</td>
+    <td class="qty" id="qty_cum" value="2">2</td>
+    <td class="tg-9wq8" id="thanhtien_cum">660.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">6</td>
@@ -106,8 +112,8 @@
     <td class="tg-lboi">Menactra</td>
     <td class="tg-lboi">Mỹ</td>
     <td class="tg-9wq8">1.245.000 đ</td>
-    <td class="qty" id="qty-ac">1</td>
-    <td class="tg-9wq8">1.245.000 đ</td>
+    <td class="qty" id="qty_ac" value="1">1</td>
+    <td class="tg-9wq8" id="thanhtien_ac" value="1245000">1.245.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">7</td>
@@ -115,8 +121,8 @@
     <td class="tg-lboi">Imojev</td>
     <td class="tg-lboi">Thái Lan</td>
     <td class="tg-9wq8">655.000 đ</td>
-    <td class="qty" id="qty-imj">1</td>
-    <td class="tg-9wq8">655.000 đ</td>
+    <td class="qty" id="qty_imj" value="1">1</td>
+    <td class="tg-9wq8" id="thanhtien_imj" value="655000">655.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">8</td>
@@ -124,8 +130,8 @@
     <td class="tg-lboi">Priorix</td>
     <td class="tg-lboi">Bỉ</td>
     <td class="tg-9wq8">400.000 đ</td>
-    <td class="qty" id="qty-pri">1</td>
-    <td class="tg-9wq8">400.000 đ</td>
+    <td class="qty" id="qty_pri" value="1">1</td>
+    <td class="tg-9wq8" id="thanhtien_pri" value="400000">400.000 đ</td>
   </tr>
   <tr>
     <td class="tg-9wq8">9</td>
@@ -133,17 +139,17 @@
     <td class="tg-lboi">Varilrix</td>
     <td class="tg-lboi">Bỉ</td>
     <td class="tg-9wq8">940.000 đ</td>
-    <td class="qty" id="qty-td">1</td>
-    <td class="tg-9wq8">940.000 đ</td>
+    <td class="qty" id="qty_td" value="1">1</td>
+    <td class="tg-9wq8" id="thanhtien_td" value="940000">940.000 đ</td>
   </tr>
   <tr>
     <td class="tg-yz93" colspan="5">Tổng số liều:&nbsp;&nbsp;&nbsp;</td>
-    <td class="tg-9wq8" id="qty-solieu">17</td>
+    <td class="tg-9wq8" id="qty_solieu">17</td>
     <td class="tg-9wq8"></td>
   </tr>
   <tr>
     <td class="tg-yz93" colspan="5">Giá tiêm lẻ:</td>
-    <td class="tg-9wq8" colspan="2">12.395.000 đ</td>
+    <td class="tg-9wq8" colspan="2" id="thanhtien">12.395.000 đ</td>
   </tr>
   <tr>
     <td class="tg-yz93" colspan="5">Giá gói:</td>
@@ -173,7 +179,13 @@ else if(value3 === "Rotarix"){ document.getElementById("nsx-rota").innerHTML = "
 else if(value3 === "Rotavin"){ document.getElementById("nsx-rota").innerHTML = "Việt Nam"; document.getElementById("gia-rota").innerHTML = "450.000 đ"; document.getElementById("qty-rota").innerHTML = "2"}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
   };
-
+function myFunction4(cum) {
+var value4 = cum.value;
+if(value4 === "GCFlus Quadrivalent"){ document.getElementById("nsx-cum").innerHTML = "Hàn Quốc"; document.getElementById("gia-cum").innerHTML = "330.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "660.000 đ"}
+else if(value4 === "Influvac Tetra"){ document.getElementById("nsx-cum").innerHTML = "Hà Lan"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
+else if(value4 === "Vaxigrip Tetra"){ document.getElementById("nsx-cum").innerHTML = "Pháp"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
+else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
+  };
 
 </script>
 
