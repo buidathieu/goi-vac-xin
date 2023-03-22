@@ -194,7 +194,8 @@ else if(value4 === "Influvac Tetra"){ thanhtien_cum.value = 680;document.getElem
 else if(value4 === "Vaxigrip Tetra"){ thanhtien_cum.value = 680;document.getElementById("nsx-cum").innerHTML = "Pháp"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
-document.getElementById("thanhtien").innerHTML = thanhtien.value/1000.toFixed(3) + ".000 đ";
+document.getElementById("thanhtien").innerHTML = thanhtien.value + ".000 đ";
+  
 $(document).ready(function () {
 thanhtien_in1.value = 2.985; thanhtien_phecau.value = 2.970; thanhtien_rota.value = 1.980; thanhtien_cum.value = 0.660; thanhtien_bc.value = 0.560; thanhtien_ac.value = 1.245; thanhtien_imj.value = 0.655; thanhtien_td.value = 0.940; thanhtien_pri.value = 0.400;
 thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
