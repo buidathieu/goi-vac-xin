@@ -164,23 +164,23 @@ var value1 = in1.value;
 if(value1 === "Hexaxim"){ document.getElementById("nsx-in1").innerHTML = "Pháp";}
 else if(value1 === "Infanrix Hexa"){ document.getElementById("nsx-in1").innerHTML = "Bỉ";}
 else{document.getElementById("dkm").innerHTML = "You selected: Volvo";}
-thanhtien.value = thanhtien_in1.value + 5;
+thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
 document.getElementById("thanhtien").innerHTML = thanhtien.value;
 };
 
 function myFunction2(phecau) {
 var value2 = phecau.value; 
-if(value2 === "Synflorix"){ gia_phecau.value = 990000; document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia_phecau").innerHTML = "990.000 đ"; thanhtien_phecau.value = 2970000; document.getElementById("thanhtien_phecau").innerHTML = "2.970.000 đ"}
-else if(value2 === "Prevenar"){ document.getElementById("nsx-phecau").innerHTML = "Anh"; document.getElementById("gia_phecau").innerHTML = "1.285.000 đ"; thanhtien_phecau.value = 3855000; document.getElementById("thanhtien_phecau").innerHTML = "3.855.000 đ" }
+if(value2 === "Synflorix"){ gia_phecau.value = 990000; document.getElementById("nsx-phecau").innerHTML = "Bỉ"; document.getElementById("gia_phecau").innerHTML = "990.000 đ"; thanhtien_phecau.value = 2970; document.getElementById("thanhtien_phecau").innerHTML = "2.970.000 đ"}
+else if(value2 === "Prevenar"){ document.getElementById("nsx-phecau").innerHTML = "Anh"; document.getElementById("gia_phecau").innerHTML = "1.285.000 đ"; thanhtien_phecau.value = 3855; document.getElementById("thanhtien_phecau").innerHTML = "3.855.000 đ" }
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
 document.getElementById("thanhtien").innerHTML = thanhtien.value;
 };
 function myFunction3(rota) {
 var value3 = rota.value;
-if(value3 === "Rotateq"){ thanhtien_rota.value = 1980000; document.getElementById("nsx-rota").innerHTML = "Mỹ"; document.getElementById("gia-rota").innerHTML = "660.000 đ"; document.getElementById("qty_rota").innerHTML = "3"; document.getElementById("thanhtien_rota").innerHTML = "1.980.000 đ"; qty_rota.value = 3}
-else if(value3 === "Rotarix"){ thanhtien_rota.value = 1640000; document.getElementById("nsx-rota").innerHTML = "Bỉ"; document.getElementById("gia-rota").innerHTML = "820.000 đ"; document.getElementById("qty_rota").innerHTML = "2"; document.getElementById("thanhtien_rota").innerHTML = "1.640.000 đ"; qty_rota.value = 2}
-else if(value3 === "Rotavin"){ thanhtien_rota.value = 900000; document.getElementById("nsx-rota").innerHTML = "Việt Nam"; document.getElementById("gia-rota").innerHTML = "450.000 đ"; document.getElementById("qty_rota").innerHTML = "2"; document.getElementById("thanhtien_rota").innerHTML = "900.000 đ"; qty_rota.value = 2}
+if(value3 === "Rotateq"){ thanhtien_rota.value = 1980; document.getElementById("nsx-rota").innerHTML = "Mỹ"; document.getElementById("gia-rota").innerHTML = "660.000 đ"; document.getElementById("qty_rota").innerHTML = "3"; document.getElementById("thanhtien_rota").innerHTML = "1.980.000 đ"; qty_rota.value = 3}
+else if(value3 === "Rotarix"){ thanhtien_rota.value = 1640; document.getElementById("nsx-rota").innerHTML = "Bỉ"; document.getElementById("gia-rota").innerHTML = "820.000 đ"; document.getElementById("qty_rota").innerHTML = "2"; document.getElementById("thanhtien_rota").innerHTML = "1.640.000 đ"; qty_rota.value = 2}
+else if(value3 === "Rotavin"){ thanhtien_rota.value = 900; document.getElementById("nsx-rota").innerHTML = "Việt Nam"; document.getElementById("gia-rota").innerHTML = "450.000 đ"; document.getElementById("qty_rota").innerHTML = "2"; document.getElementById("thanhtien_rota").innerHTML = "900.000 đ"; qty_rota.value = 2}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 qty_solieu.value = qty_rota.value + 14;
 document.getElementById("qty_solieu").innerHTML = qty_solieu.value; 
@@ -189,9 +189,9 @@ document.getElementById("thanhtien").innerHTML = thanhtien.value;
   };
 function myFunction4(cum) {
 var value4 = cum.value;
-if(value4 === "GCFlu Quadrivalent"){ thanhtien_cum.value = 660000; document.getElementById("nsx-cum").innerHTML = "Hàn Quốc"; document.getElementById("gia-cum").innerHTML = "330.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "660.000 đ"}
-else if(value4 === "Influvac Tetra"){ thanhtien_cum.value = 680000;document.getElementById("nsx-cum").innerHTML = "Hà Lan"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
-else if(value4 === "Vaxigrip Tetra"){ thanhtien_cum.value = 680000;document.getElementById("nsx-cum").innerHTML = "Pháp"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
+if(value4 === "GCFlu Quadrivalent"){ thanhtien_cum.value = 660; document.getElementById("nsx-cum").innerHTML = "Hàn Quốc"; document.getElementById("gia-cum").innerHTML = "330.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "660.000 đ"}
+else if(value4 === "Influvac Tetra"){ thanhtien_cum.value = 680;document.getElementById("nsx-cum").innerHTML = "Hà Lan"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
+else if(value4 === "Vaxigrip Tetra"){ thanhtien_cum.value = 680;document.getElementById("nsx-cum").innerHTML = "Pháp"; document.getElementById("gia-cum").innerHTML = "340.000 đ"; document.getElementById("thanhtien_cum").innerHTML = "680.000 đ"}
 else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
 document.getElementById("thanhtien").innerHTML = thanhtien.value;
@@ -199,7 +199,7 @@ document.getElementById("thanhtien").innerHTML = thanhtien.value;
 $(document).ready(function () {
 thanhtien_in1.value = 2985; thanhtien_phecau.value = 2970; thanhtien_rota.value = 1980; thanhtien_cum.value = 660; thanhtien_bc.value = 560; thanhtien_ac.value = 1245; thanhtien_imj.value = 655; thanhtien_td.value = 940; thanhtien_pri.value = 400;
 thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
-document.getElementById("thanhtien").innerHTML = thanhtien.value;
+document.getElementById("thanhtien").innerHTML = thanhtien.value + ".000 đ";
 });
 </script>
 
