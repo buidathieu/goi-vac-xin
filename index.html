@@ -196,7 +196,11 @@ else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
 thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
 document.getElementById("thanhtien").innerHTML = thanhtien.value;
   };
-
+$(document).ready(function () {
+thanhtien_in1.value = 2985; thanhtien_phecau.value = 2970; thanhtien_rota.value = 1980; thanhtien_cum.value = 660; thanhtien_bc.value = 560; thanhtien_ac.value = 1245; thanhtien_imj.value = 655; thanhtien_td.value = 940; thanhtien_pri.value = 400;
+thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
+document.getElementById("thanhtien").innerHTML = thanhtien.value;
+});
 </script>
 
 
