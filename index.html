@@ -223,6 +223,8 @@ let tong1 = (+tong).toFixed(3);
 let tong2 = (tong1 - 0.3).toFixed(3);
 document.getElementById("thanhtien").innerHTML = tong1 + ".000 đ";
 document.getElementById("giagoi").innerHTML = tong2 + ".000 đ";
+qty_solieu.value = qty_rota.value + qty_ac.value + 13;
+document.getElementById("qty_solieu").innerHTML = qty_solieu.value; 
  }; 
   
 $(document).ready(function () {
@@ -232,7 +234,7 @@ let tong1 = (+tong).toFixed(3);
 let tong2 = (tong1 - 0.3).toFixed(3);
 document.getElementById("thanhtien").innerHTML = tong1 + ".000 đ";
 document.getElementById("giagoi").innerHTML = tong2 + ".000 đ";
-qty_rota.value = +3; qty_ac.value = +1;
+qty_rota.value = 3; qty_ac.value = 1;
 qty_solieu.value = qty_rota.value + qty_ac.value + 13;
 document.getElementById("qty_solieu").innerHTML = qty_solieu.value; 
 });
