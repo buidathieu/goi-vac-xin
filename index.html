@@ -203,7 +203,7 @@ document.getElementById("thanhtien").innerHTML = tong + ".000 đ";
 $(document).ready(function () {
 thanhtien_in1.value = 2.985; thanhtien_phecau.value = 2.970; thanhtien_rota.value = 1.980; thanhtien_cum.value = 0.660; thanhtien_bc.value = 0.560; thanhtien_ac.value = 1.245; thanhtien_imj.value = 0.655; thanhtien_td.value = 0.940; thanhtien_pri.value = 0.400;
 thanhtien.value = (thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value)*1000;
-var tong = thanhtien.value/1000;
+var tong = thanhtien.value/1000.tofixed(3);
 document.getElementById("thanhtien").innerHTML = tong + ".000 đ";
 });
 </script>
