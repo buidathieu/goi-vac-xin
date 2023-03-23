@@ -112,7 +112,12 @@
     <td class="tg-lboi">Menactra</td>
     <td class="tg-lboi">Mỹ</td>
     <td class="tg-9wq8">1.245.000 đ</td>
-    <td class="qty" id="qty_ac" value="1">1</td>
+    <td>
+      <select id="qty_ac" onchange="myFunction5(ac)">
+        <option value="1">1</option>
+        <option value="0">0</option>
+      </select>
+    </td>
     <td class="tg-9wq8" id="thanhtien_ac" value=1245000>1.245.000 đ</td>
   </tr>
   <tr>
@@ -153,7 +158,7 @@
   </tr>
   <tr>
     <td class="tg-yz93" colspan="5">Giá gói:</td>
-    <td class="tg-uzvj" colspan="2"><span style="font-weight:bold">12.095.000 đ</span></td>
+    <td class="tg-uzvj" colspan="2"><span style="font-weight:bold" id="giagoi">12.095.000 đ</span></td>
   </tr>
 </tbody>
 </table>
@@ -200,11 +205,22 @@ thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.
 var tong = (thanhtien.value).toFixed(3);
 document.getElementById("thanhtien").innerHTML = tong + ".000 đ";
  }; 
+function myFunction5(ac) {
+var value5 = qty_ac.value;
+if(value5 === "1"){ thanhtien_ac.value = 1.245; document.getElementById("thanhtien_ac").innerHTML = "1.245.000 đ";}
+else if(value5 === "0"){ thanhtien_ac.value = 0.000;document.getElementById("thanhtien_ac").innerHTML = "0 đ";}
+else{document.getElementById("gia-phecau").innerHTML = "1.285.000 đ";}
+thanhtien.value = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
+var tong = (thanhtien.value).toFixed(3);
+document.getElementById("thanhtien").innerHTML = tong + ".000 đ";
+ }; 
 $(document).ready(function () {
 thanhtien_in1.value = 2.985; thanhtien_phecau.value = 2.970; thanhtien_rota.value = 1.980; thanhtien_cum.value = 0.660; thanhtien_bc.value = 0.560; thanhtien_ac.value = 1.245; thanhtien_imj.value = 0.655; thanhtien_td.value = 0.940; thanhtien_pri.value = 0.400;
 tong = thanhtien_in1.value + thanhtien_phecau.value + thanhtien_rota.value + thanhtien_cum.value + thanhtien_bc.value + thanhtien_ac.value + thanhtien_imj.value + thanhtien_pri.value + thanhtien_td.value;
 let tong1 = (+tong).toFixed(3);
+let tong2 = (tong1 - 0.3).toFixed(3);
 document.getElementById("thanhtien").innerHTML = tong1 + ".000 đ";
+document.getElementById("giagoi").innerHTML = tong1 + ".000 đ";
 });
 </script>
 
